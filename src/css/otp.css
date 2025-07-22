@@ -1,0 +1,225 @@
+/* OTPVerification.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* New container to manage overall page layout */
+.overall-otp-page-container {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.otp-verification-container {
+  /* This container now primarily holds the card itself, not the full page centering */
+  display: flex; /* Still useful for potential internal flex layouts of the card if needed */
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Take full width of its parent */
+  margin-bottom: 20px; /* Add some space between the card and the resend section */
+}
+
+.otp-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.otp-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.otp-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.otp-subtitle {
+  color: #666666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.otp-content {
+  margin-bottom: 32px;
+}
+
+.otp-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.otp-input {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #e0e0ff;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.3s ease;
+  background: white;
+}
+
+.otp-input:focus {
+  border-color: #6c5ce7;
+}
+
+.otp-input:not(:placeholder-shown) {
+  border-color: #6c5ce7;
+}
+
+.otp-input::placeholder {
+  color: #999;
+  font-weight: 400;
+}
+
+.timer-verify-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timer {
+  color: #6064FFFF;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.verify-button {
+  background: #5865f2;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.verify-button:hover:not(:disabled) {
+  background: #4752c4;
+  transform: translateY(-1px);
+}
+
+.verify-button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* The resend-section is now positioned relative to overall-otp-page-container */
+.resend-section {
+  text-align: center;
+  font-size: 14px;
+  color: #666666;
+  width: 100%; /* Ensures it can align text centrally */
+  max-width: 800px; /* Align its width with the card if desired */
+}
+
+.resend-text {
+  color: #666666;
+}
+
+.resend-button {
+  color: #00a2e3;
+  background: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.resend-button:hover:not(.disabled) {
+  color: #4752c4;
+}
+
+.resend-button.disabled {
+  color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .otp-card {
+    padding: 24px;
+  }
+
+  .otp-inputs {
+    gap: 8px;
+  }
+
+  .otp-input {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .timer-verify-section {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .verify-button {
+    width: 100%;
+  }
+
+  .otp-title {
+    font-size: 20px;
+  }
+
+  .otp-subtitle {
+    font-size: 14px;
+  }
+
+  .resend-section {
+    padding: 0 16px; /* Add padding for smaller screens if needed */
+  }
+}
+
+/* Focus states for accessibility */
+.otp-input:focus-visible {
+  outline: 2px solid #6c5ce7;
+  outline-offset: 2px;
+}
+
+.verify-button:focus-visible {
+  outline: 2px solid #6c5ce7;
+  outline-offset: 2px;
+}
+
+.resend-button:focus-visible {
+  outline: 1px solid #5865f2;
+  outline-offset: 2px;
+}
+
+/* Animation for input validation */
+.otp-input.error {
+  border-color: #ff6b6b;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 20%, 40%, 60%, 80%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+}

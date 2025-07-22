@@ -1,0 +1,182 @@
+.form-group {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.input-icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.form-group input {
+  padding-left: 40px; /* Give space for the icon */
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+ font-family: Poppins; 
+  background-color: #f5f6fa;
+}
+
+.client-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  /* padding: 40px; */
+  width: 529px;
+  border-radius: 16px;
+  box-shadow:  0px 17px 35px #171a1f3D, 0px 0px 2px #171a1f1F;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 240px; /* Increased height slightly to accommodate taller inputs */
+}
+
+h3 {
+  font-family: Poppins;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 14px;
+  margin-top: 11px;
+  color: #222;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 8px;
+  width: 442px;
+  height: 48px; /* Increased height to accommodate taller inputs */
+}
+
+.input-icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.6;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 12px 40px 12px 48px; 
+  border: 2px solid #E2E8F0; /* Lighter, more subtle border */
+  border-radius: 12px; /* More rounded corners */
+  font-size: 14px;
+  transition: border 0.2s ease-in-out;
+  box-sizing: border-box;
+  background-color: #F8F9FA; /* Light background */
+}
+
+input:focus {
+  outline: none;
+  border-color: #4F46E5; /* Modern blue focus color */
+  background-color: white; /* White background on focus */
+}
+
+/* Error message */
+.error {
+  font-size: 12px;
+  color: red;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Forgot password link */
+a {
+  font-size: 14px;
+  color: #6a5acd;
+  text-decoration: none;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Login button */
+button[type="submit"] {
+  background: #3E45FFFF;
+  color: white;
+  font-size: 16px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 8px rgba(138, 43, 226, 0.2);
+  width: 123px;
+  height: 36px;
+}
+
+button[type="submit"]:hover {
+  background: #1C24FFFF;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 0px;
+  padding: 0 0;
+}
+
+.form-footer a {
+  margin: 0;
+  font-size: 14px;
+  color: #6a5acd;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+.form-footer button {
+  padding: 10px 20px;
+}
+
+.toggle-icon {
+  position: absolute;
+  right: 12px; /* Moved closer inside the input */
+  top: 50%;
+  width: 18px; /* Slightly smaller to fit better inside */
+  height: 18px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  opacity: 0.6; /* Added opacity to match input-icon */
+  transition: opacity 0.2s ease; /* Added smooth transition */
+  z-index: 2; /* Ensure it stays above the input */
+}
+
+.toggle-icon:hover {
+  opacity: 0.8; /* Slight hover effect */
+}
