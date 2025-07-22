@@ -1,0 +1,9 @@
+# insatall pacages amd modules
+
+npm i
+npm react-router-dom
+
+# how to run
+
+npm run dev
+
