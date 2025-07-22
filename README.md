@@ -9,12 +9,12 @@ Currently, two official plugins are available:
 
 # insatall pacages amd modules
 
-npm i
-npm react-router-dom
+# npm install.
+# npm install react-router-dom
 
 # how to run
 
-npm run dev
+# npm run dev
 
 ## Expanding the ESLint configuration
 
