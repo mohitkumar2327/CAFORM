@@ -1,11 +1,13 @@
-import React, { useState } from 'react'; // ✅ Import useState
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import '../css/screen1.css';
+import { useDispatch } from 'react-redux'; // ✅ Import useDispatch
+import { login } from '../redux/usersclice.js'; // ✅ Import the login action
 
-import user from '../assets/user.png';
+import '../css/screen1.css';
+import userIcon from '../assets/user.png';
 import padlock from '../assets/padlock.png';
-import view from '../assets/view.png';   // 👁️ visible icon
-import hide from '../assets/hide.png';   // 🔒 hidden icon
+import view from '../assets/view.png';
+import hide from '../assets/hide.png';
 
 const Clientlogin = () => {
   const {
@@ -13,34 +15,35 @@ const Clientlogin = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const [showPassword, setShowPassword] = useState(false); // ✅ Toggle state
+  
+  const dispatch = useDispatch(); // ✅ Get the dispatch function
+  const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
   };
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    // ✅ Dispatch the login action with the user's email
+    dispatch(login({ email: data.email })); 
+  };
 
   return (
     <div className='client-login'>
       <div className="container">
         <h3>Sign in</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
-
-          {/* Email Field */}
+          {/* ... (Your form JSX is unchanged) ... */}
           <div className="form-group">
-            <img src={user} alt="User Icon" className="input-icon" />
+            <img src={userIcon} alt="User Icon" className="input-icon" />
             <input
               type="email"
               id="email"
               placeholder="Email"
               {...register("email", { required: true })}
             />
-            
           </div>
-
-          {/* Password Field */}
           <div className="form-group">
             <img src={padlock} alt="Lock Icon" className="input-icon" />
             <input
@@ -61,13 +64,10 @@ const Clientlogin = () => {
             />
             {errors.password && <span className='error'>This field is required</span>}
           </div>
-
-          {/* Footer */}
           <div className="form-footer">
             <a href="/forgot-password">Forgot password?</a>
             <button type="submit">Sign In</button>
           </div>
-
         </form>
       </div>
     </div>
