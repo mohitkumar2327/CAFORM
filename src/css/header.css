@@ -1,0 +1,74 @@
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+.header-top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.header-top h3 {
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+.profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #CCCEFFFF;
+}
+.header-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+}
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+}
+.breadcrumb .home-icon {
+  width: 20px;
+  height: 20px;
+  color: #6a0dad; 
+}
+.breadcrumb p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #6a0dad;
+}
+.header-bottom p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+.breadcrumb a, .breadcrumb a:visited {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  color: #08005CFF;
+  text-decoration: underline; 
+  text-underline-offset: 10px;
+  text-decoration-thickness: 3.5px;
+}
+
+.breadcrumb span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #08005CFF;
+}
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+.header h3 {
+  font-family: 'Montserrat', sans-serif;
+}
