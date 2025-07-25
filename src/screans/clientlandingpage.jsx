@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setGetStarted, setViewRespond, setViewSign } from '../redux/dashboardSlice';
 import '../css/landingpage.css';
 import Header from '../components/header';
 import docRevu from '../assets/docrevu.png';
@@ -6,22 +8,19 @@ import edit from '../assets/edit.png';
 import reload from '../assets/reload.png';
 
 const Landingpg = () => {
-  const [welcomeSubtitle, setWelcomeSubtitle] = useState("You have 3 tasks pending across 2 entities. Let's get started.");
-  const [activeActionButton, setActiveActionButton] = useState('getStarted');
+  const { welcomeSubtitle, activeActionButton } = useSelector((state) => state.dashboard);
+  const dispatch = useDispatch();
 
   const handleGetStartedClick = () => {
-    setWelcomeSubtitle("You have 3 tasks pending across 2 entities. Let's get started.");
-    setActiveActionButton('getStarted');
+    dispatch(setGetStarted());
   };
 
   const handleViewRespondClick = () => {
-    setWelcomeSubtitle("You have 3 tasks pending in 1 entity: Let's get started.");
-    setActiveActionButton('viewRespond');
+    dispatch(setViewRespond());
   };
 
   const handleViewSignClick = () => {
-    setWelcomeSubtitle("You have 2 tasks pending across 2 entities: Let's get started.");
-    setActiveActionButton('viewSign');
+    dispatch(setViewSign());
   };
 
   return (

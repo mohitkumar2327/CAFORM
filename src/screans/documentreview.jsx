@@ -1,27 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setGetStarted, setViewRespond, setViewSign, signDocument } from '../redux/dashboardSlice';
 import '../css/landingpage.css';
 import Header from '../components/header';
 import docRevu from '../assets/docrevu.png';
 import edit from '../assets/edit.png';
 import reload from '../assets/reload.png';
 
-const Documentreview = () => {
-  const [welcomeSubtitle, setWelcomeSubtitle] = useState("You have 3 tasks pending across 1 entities. Let's get started.");
-  const [activeActionButton, setActiveActionButton] = useState('getStarted');
+const DocumentReview = () => {
+  const { 
+    welcomeSubtitle, 
+    activeActionButton,
+    documentCount,
+    generalQuestionnaireStatus,
+    queryResolutionStatus
+  } = useSelector((state) => state.dashboard);
+  
+  const dispatch = useDispatch();
 
   const handleGetStartedClick = () => {
-    setWelcomeSubtitle("You have 3 tasks pending in 1 entity: Let's get started.");
-    setActiveActionButton('getStarted');
+    dispatch(setGetStarted());
   };
 
   const handleViewRespondClick = () => {
-    setWelcomeSubtitle("You have 3 tasks pending in 1 entity: Let's get started.");
-    setActiveActionButton('viewRespond');
+    dispatch(setViewRespond());
   };
 
   const handleViewSignClick = () => {
-    setWelcomeSubtitle("You have 2 tasks pending across 2 entities: Let's get started.");
-    setActiveActionButton('viewSign');
+    dispatch(setViewSign());
+  };
+
+  const handleSignDocument = () => {
+    dispatch(signDocument());
   };
 
   return (
@@ -69,13 +79,15 @@ const Documentreview = () => {
                   <h3 className="card-title">General</h3>
                   <h3 className="card-title">Questionnaire</h3>
                 </div>
-                <p className="card-status status-not-started">Not Started</p>
+                <p className="card-status status-not-started">
+                  {generalQuestionnaireStatus}
+                </p>
                 <button
                   disabled={activeActionButton !== 'getStarted'}
                   className={`btn-secondary ${activeActionButton !== 'viewRespond' ? 'btn-disabled' : ''}`}
                   onClick={handleGetStartedClick}
                 >
-                  Completed
+                  {generalQuestionnaireStatus === 'Not Started' ? 'Get Started' : 'Completed'}
                 </button>
               </div>
             </div>
@@ -90,14 +102,15 @@ const Documentreview = () => {
                   <h3 className="card-title">Query</h3>
                   <h3 className="card-title">Resolution</h3>
                 </div>
-                
+                <p className="card-status status-no-queries">
+                  {queryResolutionStatus}
+                </p>
                 <button
-                
                   disabled={activeActionButton !== 'viewRespond'}
                   className={`btn-secondary ${activeActionButton !== 'viewRespond' ? 'btn-disabled' : ''}`}
                   onClick={handleViewRespondClick}
                 >
-                  Completed
+                  {queryResolutionStatus === 'Not Started' ? 'View & Respond' : 'Completed'}
                 </button>
               </div>
             </div>
@@ -112,11 +125,16 @@ const Documentreview = () => {
                   <h3 className="card-title">Document</h3>
                   <h3 className="card-title">Review</h3>
                 </div>
-                <p className="card-status status-no-queries">2 Documents</p>
+                <p className="card-status status-no-queries">
+                  {documentCount} {documentCount === 1 ? 'Document' : 'Documents'}
+                </p>
                 <button
                   disabled={activeActionButton !== 'viewSign'}
                   className={`btn-primary ${activeActionButton !== 'getStarted' ? 'btn-disabled' : ''}`}
-                  onClick={handleViewSignClick}
+                  onClick={() => {
+                    handleViewSignClick();
+                    handleSignDocument();
+                  }}
                 >
                   View & Sign
                 </button>
@@ -139,4 +157,4 @@ const Documentreview = () => {
   );
 };
 
-export default Documentreview;
+export default DocumentReview;
