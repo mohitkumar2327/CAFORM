@@ -3,7 +3,9 @@ import Clientlogin from './screans/clientlogin.jsx';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Clientverification from './screans/clientverification.jsx';
 import Header from "./components/header.jsx";
-import Landingpg from '../src/screans/clientlandingpage.jsx'; // Corrected path to be relative from App.jsx if it's in the 'src' folder
+import Landingpg from '../src/screans/clientlandingpage.jsx';
+import Queryresolver from '../src/screans/queryresolver.jsx'
+import Documentreview from "./screans/documentreview.jsx";
 
 function App() {
   return (
@@ -15,7 +17,10 @@ function App() {
         {/* <Route path="/" element={<Clientverification />} /> */}
         {/* <Route path="/" element={<Header />} /> */}
         {/* Make sure the Landingpg route is correctly formatted */}
-        <Route path="/" element={<Landingpg />} />
+        {/* <Route path="/" element={<Landingpg />} /> */}
+        {/* <Route path="/" element={<Queryresolver />} /> */}
+        <Route path="/" element={<Documentreview />} />
+
       </Routes>
     </Router>
   );

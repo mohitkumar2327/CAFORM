@@ -5,12 +5,12 @@ import docRevu from '../assets/docrevu.png';
 import edit from '../assets/edit.png';
 import reload from '../assets/reload.png';
 
-const Landingpg = () => {
-  const [welcomeSubtitle, setWelcomeSubtitle] = useState("You have 3 tasks pending across 2 entities. Let's get started.");
+const Documentreview = () => {
+  const [welcomeSubtitle, setWelcomeSubtitle] = useState("You have 3 tasks pending across 1 entities. Let's get started.");
   const [activeActionButton, setActiveActionButton] = useState('getStarted');
 
   const handleGetStartedClick = () => {
-    setWelcomeSubtitle("You have 3 tasks pending across 2 entities. Let's get started.");
+    setWelcomeSubtitle("You have 3 tasks pending in 1 entity: Let's get started.");
     setActiveActionButton('getStarted');
   };
 
@@ -72,12 +72,11 @@ const Landingpg = () => {
                 <p className="card-status status-not-started">Not Started</p>
                 <button
                   disabled={activeActionButton !== 'getStarted'}
-                  className={`btn-primary ${activeActionButton !== 'getStarted' ? 'btn-disabled' : ''}`}
+                  className={`btn-secondary ${activeActionButton !== 'viewRespond' ? 'btn-disabled' : ''}`}
                   onClick={handleGetStartedClick}
                 >
-                  Get Started
+                  Completed
                 </button>
-                <p className="due-date">Due Date: 04/07/25</p>
               </div>
             </div>
 
@@ -91,13 +90,14 @@ const Landingpg = () => {
                   <h3 className="card-title">Query</h3>
                   <h3 className="card-title">Resolution</h3>
                 </div>
-                <p className="card-status status-no-queries">No Queries</p>
+                
                 <button
+                
                   disabled={activeActionButton !== 'viewRespond'}
                   className={`btn-secondary ${activeActionButton !== 'viewRespond' ? 'btn-disabled' : ''}`}
                   onClick={handleViewRespondClick}
                 >
-                  View & Respond
+                  Completed
                 </button>
               </div>
             </div>
@@ -112,9 +112,10 @@ const Landingpg = () => {
                   <h3 className="card-title">Document</h3>
                   <h3 className="card-title">Review</h3>
                 </div>
+                <p className="card-status status-no-queries">2 Documents</p>
                 <button
                   disabled={activeActionButton !== 'viewSign'}
-                  className={`btn-secondary ${activeActionButton !== 'viewSign' ? 'btn-disabled' : ''}`}
+                  className={`btn-primary ${activeActionButton !== 'getStarted' ? 'btn-disabled' : ''}`}
                   onClick={handleViewSignClick}
                 >
                   View & Sign
@@ -138,4 +139,4 @@ const Landingpg = () => {
   );
 };
 
-export default Landingpg;
+export default Documentreview;
