@@ -1,36 +1,27 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { setGetStarted, setViewRespond, setViewSign, resolveQuery } from '../redux/dashboardSlice';
+import React, { useState } from 'react';
 import '../css/landingpage.css';
 import Header from '../components/header';
 import docRevu from '../assets/docrevu.png';
 import edit from '../assets/edit.png';
 import reload from '../assets/reload.png';
 
-const QueryResolver = () => {
-  const { 
-    welcomeSubtitle, 
-    activeActionButton,
-    queryCount,
-    generalQuestionnaireStatus
-  } = useSelector((state) => state.dashboard);
-  
-  const dispatch = useDispatch();
+const Queryresolver = () => {
+  const [welcomeSubtitle, setWelcomeSubtitle] = useState("You have 3 tasks pending across 1 entities. Let's get started.");
+  const [activeActionButton, setActiveActionButton] = useState('getStarted');
 
   const handleGetStartedClick = () => {
-    dispatch(setGetStarted());
+    setWelcomeSubtitle("You have 3 tasks pending in 1 entity: Let's get started.");
+    setActiveActionButton('getStarted');
   };
 
   const handleViewRespondClick = () => {
-    dispatch(setViewRespond());
+    setWelcomeSubtitle("You have 3 tasks pending in 1 entity: Let's get started.");
+    setActiveActionButton('viewRespond');
   };
 
   const handleViewSignClick = () => {
-    dispatch(setViewSign());
-  };
-
-  const handleResolveQuery = () => {
-    dispatch(resolveQuery());
+    setWelcomeSubtitle("You have 2 tasks pending across 2 entities: Let's get started.");
+    setActiveActionButton('viewSign');
   };
 
   return (
@@ -78,16 +69,15 @@ const QueryResolver = () => {
                   <h3 className="card-title">General</h3>
                   <h3 className="card-title">Questionnaire</h3>
                 </div>
-                <p className="card-status status-not-started">
-                  {generalQuestionnaireStatus}
-                </p>
+                <p className="card-status status-not-started">Not Started</p>
                 <button
                   disabled={activeActionButton !== 'getStarted'}
                   className={`btn-secondary ${activeActionButton !== 'viewRespond' ? 'btn-disabled' : ''}`}
                   onClick={handleGetStartedClick}
                 >
-                  {generalQuestionnaireStatus === 'Not Started' ? 'Get Started' : 'Completed'}
+                  Completed
                 </button>
+                
               </div>
             </div>
 
@@ -101,16 +91,12 @@ const QueryResolver = () => {
                   <h3 className="card-title">Query</h3>
                   <h3 className="card-title">Resolution</h3>
                 </div>
-                <p className="card-status status-no-queries">
-                  {queryCount} {queryCount === 1 ? 'Query' : 'Queries'}
-                </p>
+                <p className="card-status status-no-queries">3 Queries</p>
                 <button
+                
                   disabled={activeActionButton !== 'viewRespond'}
                   className={`btn-primary ${activeActionButton !== 'getStarted' ? 'btn-disabled' : ''}`}
-                  onClick={() => {
-                    handleViewRespondClick();
-                    handleResolveQuery();
-                  }}
+                  onClick={handleViewRespondClick}
                 >
                   View & Respond
                 </button>
@@ -153,4 +139,4 @@ const QueryResolver = () => {
   );
 };
 
-export default QueryResolver;
+export default Queryresolver;
