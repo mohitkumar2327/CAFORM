@@ -55,7 +55,7 @@ const Header = () => {
       <div className="header-bottom">
         <div className="breadcrumb">
           <img src={homeIcon} alt="Home" className="home-icon" />
-          <b><a href="/client-portal">Client Portal &gt; Dashboard</a></b>
+          <b><a href="/client-portal">Client Portal <b>&gt;</b> Dashboard</a></b>
         </div>
         {/* The entity name is also dynamic */}
         <p>Master Entity name: {masterEntityName}</p>

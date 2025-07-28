@@ -6,7 +6,8 @@ import Header from "./components/header.jsx";
 import Landingpg from './screans/clientlandingpage.jsx';
 import Queryresolver from './screans/queryresolver.jsx';  
 import Documentreview from './screans/documentreview.jsx';
-import Headermain from "./components/mainhead.jsx";  
+import Headermain from "./components/mainhead.jsx";
+import Clientquestionnaire from "./screans/clientquestionnaire.jsx"; 
 function App() {
   return (
     <Router>
@@ -16,8 +17,9 @@ function App() {
         {/* <Route path="/" element={<Header />} /> */}
         {/* <Route path="/" element={<Landingpg />} /> */}
         {/* <Route path="/" element={<Queryresolver />} /> */}
-        <Route path="/" element={<Documentreview />} />
+        {/* <Route path="/" element={<Documentreview />} /> */}
         {/* <Route path="/" element={<Headermain />} /> */}
+        <Route path="/" element={<Clientquestionnaire />} />
       </Routes>
     </Router>
   );
