@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
 import '../css/clientquestion.css';
 import React, { useState } from 'react';
-
+import Headmain from '../components/mainhead'
 const Clientquestionnaire = () => {
   const steps = [
     { id: 'all', number: '✓', label: 'All', status: 'completed' },
@@ -60,6 +60,7 @@ const Clientquestionnaire = () => {
   return (
     // Corrected: Wrap the two main top-level divs with a React Fragment <>...</>
     <>
+     <Headmain/>
       <div className="progress-container">
         <div className="progress-wrapper">
           {/* Progress Steps */}
@@ -194,12 +195,12 @@ const Clientquestionnaire = () => {
                   </div>
                   <div className="modal-footer">
                     <button className="modal-copy-btn" onClick={handleCopyPaste}>Copy Paste</button> {/* Added onClick */}
-                    <button
+                    {/* <button
                       className="modal-close-btn-secondary"
                       onClick={() => setShowLastYearResponse(false)}
                     >
                       Close
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
