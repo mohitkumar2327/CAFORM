@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../css/clientqueries.css';
-import Headquerie from '../components/headerqueries'; // Correct import path if needed
+import Headquerie from '../components/headerqueries';
 
 const Clientqueries = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -47,12 +47,10 @@ const Clientqueries = () => {
   );
 
   return (
-    // Wrap both components in a React Fragment
     <>
-      <Headquerie/>
+      <Headquerie />
       <div className="dashboard-container">
         <div className="dashboard">
-          {/* Header */}
           <div className="dashboard-header">
             <div className="header-content">
               <div className="search-container">
@@ -84,32 +82,21 @@ const Clientqueries = () => {
             </div>
           </div>
 
-          {/* Table */}
           <div className="table-container">
             <table className="dashboard-table">
               <thead className="table-header">
                 <tr>
-                  <th className="table-header-cell number">
-                    #
-                  </th>
-                  <th className="table-header-cell">
-                    Queries
-                  </th>
-                  <th className="table-header-cell">
-                    Response
-                  </th>
+                  <th className="table-header-cell number">#</th>
+                  <th className="table-header-cell">Queries</th>
+                  <th className="table-header-cell">Response</th>
                 </tr>
               </thead>
               <tbody className="table-body">
                 {filteredQueries.map((query) => (
                   <tr key={query.id} className="table-row">
-                    <td className="table-cell number">
-                      {query.id}
-                    </td>
+                    <td className="table-cell number">{query.id}</td>
                     <td className="table-cell">
-                      <div className="query-description">
-                        {query.description}
-                      </div>
+                      <div className="query-description">{query.description}</div>
                       <div className="query-dates">
                         <span>Raised Date: {query.raised}</span>
                         <span>Due Date: {query.due}</span>
@@ -134,11 +121,8 @@ const Clientqueries = () => {
             </table>
           </div>
 
-          {/* Footer */}
           <div className="dashboard-footer">
-            <button className="save-button">
-              Save
-            </button>
+            <button className="save-button">Save</button>
           </div>
         </div>
       </div>

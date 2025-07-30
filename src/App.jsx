@@ -10,6 +10,7 @@ import Headermain from "./components/mainhead.jsx";
 import Clientquestionnaire from "./screans/clientquestionnaire.jsx";
 import Clientqueries from './screans/clientqueries.jsx'
 import Headquerie from './components/headerqueries.jsx'
+// import Documentsign from './screans/clientdocumentsign.jsx'
 function App() {
   return (
     <Router>
@@ -24,6 +25,7 @@ function App() {
         {/* <Route path="/" element={<Clientquestionnaire />} /> */}
         <Route path="/" element={<Clientqueries />} />
         {/* <Route path="/" element={<Headquerie />} /> */}
+        {/* <Route path="/" element={<Documentsign />} /> */}
       </Routes>
     </Router>
   );
