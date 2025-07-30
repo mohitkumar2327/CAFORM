@@ -1,0 +1,222 @@
+/* QueryDashboard.css */
+
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 0px;
+  width: 100%;
+}
+
+.dashboard {
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.dashboard-header {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 10px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-container {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 16px 8px 40px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  width: 16px;
+  height: 16px;
+}
+
+/* Updated Tab Styles */
+.tab-container {
+  display: flex;
+  margin-left: 16px;
+  border: 1px solid #6064FFFF; /* Apply border to the container for the pill shape */
+  border-radius: 10px; /* Apply border-radius to the container */
+  overflow: hidden; /* Ensures inner elements don't break the container's radius */
+}
+
+.tab {
+  padding: 8px 16px;
+  font-weight: 500;
+  border: none; /* Remove individual borders */
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+  /* Ensure no individual border-radius here */
+}
+
+.tab.active {
+  background-color: #6064FFFF; /* Use the purple from your image */
+  color: white;
+}
+
+.tab.inactive {
+  background-color: white; /* Make inactive background white as in the image */
+  color: #6064FFFF; /* Text color for inactive tab */
+}
+
+.tab.inactive:hover {
+  background-color: #e5e7eb; /* Keep a subtle hover for inactive */
+}
+
+
+.table-container {
+  overflow-x: auto;
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header {
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table-header-cell {
+  padding: 16px 24px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  color: #6b7280;
+  letter-spacing: 0.5px;
+}
+
+.table-header-cell.number {
+  width: 48px;
+}
+
+.table-body {
+  background-color: white;
+}
+
+.table-row {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.table-row:hover {
+  background-color: #f9fafb;
+}
+
+.table-cell {
+  padding: 10px;
+  vertical-align: top;
+}
+
+.table-cell.number {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.table-cell.response {
+  text-align: right;
+  width: 300px;
+}
+
+.query-description {
+  font-size: 14px;
+  color: #111827;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.query-dates {
+  display: flex;
+  gap: 24px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.response-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 119px;
+}
+
+.response-textarea {
+  width: 633px;
+  height: 70px;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.response-textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.attachment-icon {
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 0.2s;
+  width: 20px;
+  height: 20px;
+}
+
+.attachment-icon:hover {
+  color: #6b7280;
+}
+
+.dashboard-footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-button {
+  background-color: #2563eb;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+}
+
+.save-button:hover {
+  background-color: #1d4ed8;
+}
