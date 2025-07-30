@@ -1,35 +1,352 @@
-.dashboard-container {
+/* Container */
+.container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #ffffff;
   min-height: 100vh;
-  background-color: #f9fafb;
-  padding: 0;
+  padding: 20px;
   width: 100%;
 }
 
-.dashboard {
-  margin: 0 auto;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  width: 100%;
+/* Search Container */
+.search-container {
+  max-height: fit-content;
 }
 
-.dashboard-header {
+.search-input-wrapper {
+  position: relative;
+  max-width: 300px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Tabs */
+.tabs-container {
+  display: flex;
   border-bottom: 1px solid #e5e7eb;
-  padding: 16px 24px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
-.header-content {
+.tab {
+  padding: 12px 16px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tab:hover:not(.active) {
+  color: #374151;
+}
+
+.tab.active {
+  color: #3b82f6;
+  background-color: white;
+  border-bottom-color: #3b82f6;
+}
+
+/* Table */
+.table-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.header-row {
+  background-color: #f9fafb;
+}
+
+.header-cell {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.data-row {
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.15s ease;
+}
+
+.data-row:hover {
+  background-color: #f9fafb;
+}
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+.data-cell {
+  padding: 16px;
+  font-size: 14px;
+  color: #374151;
+  vertical-align: middle;
+}
+
+/* Document Name */
+.document-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.file-icon {
+  font-size: 16px;
+}
+
+/* Actions */
+.actions-container {
+  display: flex;
+  gap: 10px;
+}
+
+.action-button {
+  padding: 6px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #6b7280;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-button:hover {
+  background-color: #f3f4f6;
+  color: #4a6cf7;
+  transform: scale(1.1);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* PDF Modal Styles */
+.pdf-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.pdf-modal-content {
+  background: white;
+  width: 90%;
+  height: 90%;
+  max-width: 900px;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+}
+
+.pdf-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.pdf-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .tabs-container {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .tab {
+    flex-shrink: 0;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .table {
+    min-width: 600px;
+  }
+
+  .search-input-wrapper {
+    max-width: 100%;
+  }
+}
+.search-input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.search-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 16px;
+  width: 100%;
+  right: 545px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 300px; /* controls how wide the input is */
+}
+/* Container */
+.container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Bar - contains search and potentially other controls */
+.top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
+/* Search Container - now part of the top bar */
 .search-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto; /* Let it take only needed space */
+}
+
+.search-input-wrapper {
   position: relative;
-  flex: 1;
-  max-width: 400px;
+  width: 300px; /* Fixed width or use max-width as you prefer */
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+/* Ensure container has proper layout */
+.container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top bar styling */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Search container styling */
+.search-container {
+  display: flex;
+  width: 100%;
+  max-width: 400px; /* Adjust width as needed */
+}
+
+.search-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  z-index: 1;
 }
 
 .search-input {
@@ -39,177 +356,15 @@
   border-radius: 8px;
   font-size: 14px;
   outline: none;
-  transition: all 0.2s;
-  background-color: white;
+  box-sizing: border-box;
+  background-color: #f9fafb;
+  transition: all 0.2s ease;
 }
 
 .search-input:focus {
-  border-color: #6064ff;
-  box-shadow: 0 0 0 3px rgba(96, 100, 255, 0.1);
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background-color: #ffffff;
 }
 
-.search-icon {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #9ca3af;
-  width: 16px;
-  height: 16px;
-}
-
-.tab-container {
-  display: flex;
-  border: 1px solid #6064ff;
-  border-radius: 10px;
-  overflow: hidden;
-  height: 36px;
-}
-
-.tab {
-  padding: 8px 16px;
-  font-weight: 500;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s;
-  background-color: transparent;
-}
-
-.tab.active {
-  background-color: #6064ff;
-  color: white;
-}
-
-.tab.inactive {
-  background-color: white;
-  color: #6064ff;
-}
-
-.tab.inactive:hover {
-  background-color: #f3f4f6;
-}
-
-/* Table Layout */
-.table-container {
-  overflow-x: auto;
-}
-
-.dashboard-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.table-header {
-  background-color: #f9fafb;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.table-header-cell {
-  padding: 16px 24px;
-  text-align: left;
-  font-size: 16px;
-  font-weight: 600;
-  color: #4b5563;
-}
-
-.table-header-cell.number {
-  width: 48px;
-}
-
-.table-body {
-  background-color: white;
-}
-
-.table-row {
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.table-cell {
-  padding: 16px 24px;
-  vertical-align: top;
-}
-
-.table-cell.number {
-  font-weight: 500;
-  color: #111827;
-}
-
-.table-cell.response {
-  width: 350px;
-}
-
-.query-description {
-  font-size: 14px;
-  color: #111827;
-  margin-bottom: 8px;
-  line-height: 1.5;
-}
-
-.query-dates {
-  display: flex;
-  gap: 24px;
-  font-size: 12px;
-  color: #6b7280;
-}
-
-.response-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.response-textarea {
-  flex: 1;
-  min-height: 70px;
-  padding: 10px 12px;
-  border: 1px solid #d1d5db;
-  font-size: 14px;
-  font-family: inherit;
-  resize: vertical;
-  border-radius: 6px;
-  outline: none;
-}
-
-.response-textarea:focus {
-  border-color: #6064ff;
-  box-shadow: 0 0 0 3px rgba(96, 100, 255, 0.1);
-}
-
-.attachment-icon {
-  color: #9ca3af;
-  cursor: pointer;
-  transition: color 0.2s;
-  width: 20px;
-  height: 20px;
-  margin-top: 8px;
-}
-
-.attachment-icon:hover {
-  color: #6b7280;
-}
-
-/* Footer */
-.dashboard-footer {
-  border-top: 1px solid #e5e7eb;
-  padding: 16px 24px;
-  display: flex;
-  justify-content: flex-end;
-  background-color: white;
-}
-
-.save-button {
-  background-color: #6064ff;
-  color: white;
-  padding: 8px 24px;
-  border-radius: 6px;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  font-size: 14px;
-}
-
-.save-button:hover {
-  background-color: #4f46e5;
-}
+/* The rest of your existing CSS can remain the same */
