@@ -1,370 +1,327 @@
-/* Container */
+/* CSS Reset for body and html */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+/* clientdocsign.css */
+
+/* Base Styles and Container */
 .container {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #ffffff;
-  min-height: 100vh;
-  padding: 20px;
-  width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #ffffff;
+    min-height: auto; /* Remove min-height constraint */
+    padding: 0; /* Remove all padding */
+    margin: 0; /* Remove all margin */
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-/* Search Container */
-.search-container {
-  max-height: fit-content;
+/* Top Bar - Container for the Search Input */
+.top-bar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0; /* Remove all margins */
+    width: 100%;
+    padding: 16px 20px 12px 20px; /* Keep only necessary padding */
+    background-color: #ffffff;
 }
 
+/* Search Input Wrapper */
 .search-input-wrapper {
-  position: relative;
-  max-width: 300px;
+    position: relative;
+    width: 100%;
+    max-width: 280px; /* Slightly smaller to match image */
 }
 
+/* Search Icon */
 .search-icon {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #9ca3af;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    z-index: 1;
 }
 
+/* Search Input Field */
 .search-input {
-  width: 100%;
-  padding: 8px 12px 8px 36px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 14px;
-  outline: none;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 8px 12px 8px 32px; /* Reduced padding to match compact design */
+    border: 1px solid #d1d5db;
+    border-radius: 6px; /* Slightly smaller border radius */
+    font-size: 13px; /* Smaller font size */
+    outline: none;
+    box-sizing: border-box;
+    background-color: #ffffff; /* Pure white background */
+    transition: all 0.2s ease;
+}
+
+.search-input::placeholder {
+    color: #9ca3af;
+    font-size: 13px;
 }
 
 .search-input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+    background-color: #ffffff;
 }
 
-/* Tabs */
+/* Tabs Container */
 .tabs-container {
-  display: flex;
-  border-bottom: 1px solid #e5e7eb;
-  margin-bottom: 20px;
-  width: 100%;
+    display: flex;
+    border-bottom: 1px solid #e5e7eb;
+    margin: 0; /* Remove all margins */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px; /* Keep only horizontal padding */
+    background-color: #ffffff;
 }
 
+/* Individual Tab Button */
 .tab {
-  padding: 12px 16px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  color: #6b7280;
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s ease;
+    padding: 10px 16px 12px 16px; /* Adjusted padding for compact look */
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 13px; /* Smaller font size */
+    font-weight: 500;
+    color: #6b7280;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    margin-right: 24px; /* Space between tabs */
+}
+
+.tab:last-child {
+    margin-right: 0;
 }
 
 .tab:hover:not(.active) {
-  color: #374151;
+    color: #374151;
 }
 
 .tab.active {
-  color: #3b82f6;
-  background-color: white;
-  border-bottom-color: #3b82f6;
+    color: #1f2937; /* Darker color for active tab */
+    border-bottom-color: #3b82f6;
+    background-color: white;
+}
+
+/* Table Container */
+.table-container {
+    background-color: #ffffff;
+    border-radius: 0; /* Remove border radius to match image */
+    overflow: hidden;
+    box-shadow: none; /* Remove box shadow */
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid #e5e7eb; /* Add top border */
+    height: 100%;
 }
 
 /* Table */
-.table-container {
-  background-color: #ffffff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
 .table {
-  width: 100%;
-  border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 
+/* Table Header Row */
 .header-row {
-  background-color: #f9fafb;
+    background-color: #f8fafc; /* Slightly different background */
+    border-bottom: 1px solid #e5e7eb;
 }
 
+/* Table Header Cells */
 .header-cell {
-  padding: 12px 16px;
-  text-align: left;
-  font-size: 12px;
-  font-weight: 600;
-  color: #6b7280;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-bottom: 1px solid #e5e7eb;
+    padding: 12px 20px; /* Consistent horizontal padding */
+    text-align: left;
+    font-size: 11px; /* Smaller font size */
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: none; /* Remove individual cell borders */
 }
 
+/* Table Data Rows */
 .data-row {
-  border-bottom: 1px solid #f3f4f6;
-  transition: background-color 0.15s ease;
+    border-bottom: 1px solid #f1f5f9; /* Very light separator */
+    transition: background-color 0.15s ease;
 }
 
 .data-row:hover {
-  background-color: #f9fafb;
+    background-color: #f8fafc;
 }
 
 .data-row:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
+/* Table Data Cells */
 .data-cell {
-  padding: 16px;
-  font-size: 14px;
-  color: #374151;
-  vertical-align: middle;
+    padding: 14px 20px; /* Consistent horizontal padding, slightly reduced vertical */
+    font-size: 13px; /* Smaller font size */
+    color: #374151;
+    vertical-align: middle;
+    border-right: none; /* Remove cell borders */
 }
 
 /* Document Name */
 .document-name {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .file-icon {
-  font-size: 16px;
+    font-size: 14px; /* Smaller icon */
+    color: #3b82f6; /* Blue color for file icon */
 }
 
-/* Actions */
+/* Actions Container */
 .actions-container {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    gap: 8px; /* Reduced gap */
+    justify-content: flex-end; /* Align to right like in image */
 }
 
+/* Action Buttons */
 .action-button {
-  padding: 6px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  border-radius: 4px;
-  color: #6b7280;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    padding: 6px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #6b7280;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .action-button:hover {
-  background-color: #f3f4f6;
-  color: #4a6cf7;
-  transform: scale(1.1);
+    background-color: #f3f4f6;
+    color: #3b82f6;
+    transform: scale(1.05); /* Reduced scale effect */
 }
 
-/* Empty State */
+/* Empty State, Loading, Error Messages */
+.empty-state, .loading-message, .error-message {
+    text-align: center;
+    padding: 32px 20px; /* Reduced padding */
+    font-size: 13px; /* Smaller font */
+}
+
 .empty-state {
-  text-align: center;
-  padding: 40px;
-  color: #9ca3af;
-  font-size: 14px;
+    color: #9ca3af;
 }
 
-/* PDF Modal Styles */
-.pdf-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+.loading-message {
+    color: #6b7280;
+}
+
+.error-message {
+    color: #dc3545;
+}
+
+/* PDF Viewer Modal Styles */
+.pdf-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
 .pdf-modal-content {
-  background: white;
-  width: 90%;
-  height: 90%;
-  max-width: 900px;
-  border-radius: 8px;
-  padding: 20px;
-  position: relative;
-}
-
-.pdf-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 900px;
+    height: 90%;
+    max-height: 80vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .pdf-modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #333;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: #333;
+    z-index: 1001;
+}
+
+.pdf-modal-close:hover {
+    color: #f00;
+}
+
+.pdf-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .container {
-    padding: 10px;
-  }
+    .container {
+        padding: 0; /* No padding on mobile either */
+        margin: 0; /* No margin on mobile */
+    }
+    
+    .top-bar {
+        padding: 12px 16px;
+    }
+    
+    .tabs-container {
+        padding: 0 16px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 
-  .tabs-container {
-    overflow-x: auto;
-    white-space: nowrap;
-  }
+    .tab {
+        flex-shrink: 0;
+        margin-right: 16px;
+    }
 
-  .tab {
-    flex-shrink: 0;
-  }
+    .table-container {
+        overflow-x: auto;
+    }
 
-  .table-container {
-    overflow-x: auto;
-  }
+    .table {
+        min-width: 600px;
+    }
 
-  .table {
-    min-width: 600px;
-  }
+    .header-cell, .data-cell {
+        padding: 12px 16px;
+    }
 
-  .search-input-wrapper {
-    max-width: 100%;
-  }
+    .search-input-wrapper {
+        max-width: 100%;
+    }
 }
-.search-input {
-  width: 100%;
-  padding: 8px 12px 8px 36px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-.search-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 16px;
-  width: 100%;
-  right: 545px;
-}
-
-.search-input-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 300px; /* controls how wide the input is */
-}
-/* Container */
-.container {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #ffffff;
-  min-height: 100vh;
-  padding: 20px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Top Bar - contains search and potentially other controls */
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-/* Search Container - now part of the top bar */
-.search-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: auto; /* Let it take only needed space */
-}
-
-.search-input-wrapper {
-  position: relative;
-  width: 300px; /* Fixed width or use max-width as you prefer */
-}
-
-.search-icon {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #9ca3af;
-}
-
-.search-input {
-  width: 100%;
-  padding: 8px 12px 8px 36px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 14px;
-  outline: none;
-  box-sizing: border-box;
-}
-
-.search-input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-}
-/* Ensure container has proper layout */
-.container {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #ffffff;
-  min-height: 100vh;
-  padding: 20px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Top bar styling */
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-/* Search container styling */
-.search-container {
-  display: flex;
-  width: 100%;
-  max-width: 400px; /* Adjust width as needed */
-}
-
-.search-input-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-.search-icon {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #9ca3af;
-  z-index: 1;
-}
-
-.search-input {
-  width: 100%;
-  padding: 10px 16px 10px 40px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 14px;
-  outline: none;
-  box-sizing: border-box;
-  background-color: #f9fafb;
-  transition: all 0.2s ease;
-}
-
-.search-input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-  background-color: #ffffff;
-}
-
-/* The rest of your existing CSS can remain the same */
