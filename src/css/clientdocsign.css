@@ -37,6 +37,8 @@ div, section, main, article {
     flex-direction: column;
     position: relative; /* Add positioning context */
     height: 100vh;
+    min-height: 100vh;
+  overflow-y: auto;
 }
 
 /* Top Bar - Container for the Search Input */

@@ -63,6 +63,7 @@
   justify-content: center;
   gap: 12px;
   margin-bottom: 24px;
+  padding: 10px 0;
 }
 
 .otp-input {
@@ -95,6 +96,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 19px 1px
 }
 
 .timer {

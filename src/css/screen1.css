@@ -1,29 +1,13 @@
-.form-group {
-  position: relative;
-  margin-bottom: 8px;
-}
-
-.input-icon {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-.form-group input {
-  padding-left: 40px; /* Give space for the icon */
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 0;
- font-family: Poppins; 
+  font-family: Poppins, sans-serif;
   background-color: #f5f6fa;
 }
 
@@ -36,19 +20,20 @@ body {
 
 .container {
   background: white;
-  /* padding: 40px; */
   width: 529px;
   border-radius: 16px;
-  box-shadow:  0px 17px 35px #171a1f3D, 0px 0px 2px #171a1f1F;
+  box-shadow: 0px 17px 35px #171a1f3d, 0px 0px 2px #171a1f1f;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 240px; /* Increased height slightly to accommodate taller inputs */
+  height: 210px;
+  padding: 20px;
+  min-height: 210px;
 }
 
 h3 {
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   text-align: center;
   font-size: 18px;
   margin-bottom: 14px;
@@ -68,7 +53,7 @@ form {
   position: relative;
   margin-bottom: 8px;
   width: 442px;
-  height: 48px; /* Increased height to accommodate taller inputs */
+  height: 48px;
 }
 
 .input-icon {
@@ -85,22 +70,21 @@ input[type="email"],
 input[type="password"],
 input[type="text"] {
   width: 100%;
-  padding: 12px 40px 12px 48px; 
-  border: 2px solid #E2E8F0; /* Lighter, more subtle border */
-  border-radius: 12px; /* More rounded corners */
+  padding: 12px 40px 12px 48px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
   font-size: 14px;
   transition: border 0.2s ease-in-out;
   box-sizing: border-box;
-  background-color: #F8F9FA; /* Light background */
+  background-color: #f8f9fa;
 }
 
 input:focus {
   outline: none;
-  border-color: #4F46E5; /* Modern blue focus color */
-  background-color: white; /* White background on focus */
+  border-color: #4f46e5;
+  background-color: white;
 }
 
-/* Error message */
 .error {
   font-size: 12px;
   color: red;
@@ -108,7 +92,6 @@ input:focus {
   display: block;
 }
 
-/* Forgot password link */
 a {
   font-size: 14px;
   color: #6a5acd;
@@ -121,9 +104,8 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Login button */
 button[type="submit"] {
-  background: #3E45FFFF;
+  background: #3e45ff;
   color: white;
   font-size: 16px;
   padding: 12px;
@@ -137,7 +119,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background: #1C24FFFF;
+  background: #1c24ff;
 }
 
 .form-footer {
@@ -166,17 +148,40 @@ button[type="submit"]:hover {
 
 .toggle-icon {
   position: absolute;
-  right: 12px; /* Moved closer inside the input */
+  right: 12px;
   top: 50%;
-  width: 18px; /* Slightly smaller to fit better inside */
+  width: 18px;
   height: 18px;
   transform: translateY(-50%);
   cursor: pointer;
-  opacity: 0.6; /* Added opacity to match input-icon */
-  transition: opacity 0.2s ease; /* Added smooth transition */
-  z-index: 2; /* Ensure it stays above the input */
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  z-index: 2;
 }
 
 .toggle-icon:hover {
-  opacity: 0.8; /* Slight hover effect */
+  opacity: 0.8;
+}
+
+/* Responsive Fixes */
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
 }

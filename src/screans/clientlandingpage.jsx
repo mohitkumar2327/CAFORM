@@ -34,30 +34,6 @@ const Landingpg = () => {
             <h1 className="welcome-title">Welcome, John.</h1>
             <p className="welcome-subtitle">{welcomeSubtitle}</p>
           </div>
-
-          <div className="dropdown-filters-container">
-            <div className="dropdown-wrapper">
-              <select className="dropdown-select">
-                <option>Sample Company Ltd</option>
-              </select>
-              <div className="dropdown-arrow">
-                <svg className="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
-            </div>
-            <div className="dropdown-wrapper">
-              <select className="dropdown-select">
-                <option>FY 2025</option>
-              </select>
-              <div className="dropdown-arrow">
-                <svg className="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
-            </div>
-          </div>
-
           <div className="main-content-grid">
             {/* General Questionnaire Card */}
             <div className="task-card card-base">

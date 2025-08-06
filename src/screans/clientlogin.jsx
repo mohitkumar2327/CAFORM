@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { useDispatch } from 'react-redux'; // ✅ Import useDispatch
-import { login } from '../redux/usersclice.js'; // ✅ Import the login action
-
-import '../css/screen1.css';
+import { useDispatch } from 'react-redux';
+import { login } from '../redux/usersclice.js';
+// import '../css/screen1.css';
 import userIcon from '../assets/user.png';
 import padlock from '../assets/padlock.png';
 import view from '../assets/view.png';
 import hide from '../assets/hide.png';
-
+import { useNavigate } from 'react-router-dom';
 const Clientlogin = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  
+    const navigate = useNavigate();
+
   const dispatch = useDispatch(); // ✅ Get the dispatch function
   const [showPassword, setShowPassword] = useState(false);
 
@@ -24,11 +24,10 @@ const Clientlogin = () => {
   };
 
   const onSubmit = (data) => {
-    console.log(data);
-    // ✅ Dispatch the login action with the user's email
-    dispatch(login({ email: data.email })); 
+  dispatch(login({ email: data.email }));
+  navigate('/clientverfication');
   };
-
+ 
   return (
     <div className='client-login'>
       <div className="container">
@@ -66,12 +65,13 @@ const Clientlogin = () => {
           </div>
           <div className="form-footer">
             <a href="/forgot-password">Forgot password?</a>
-            <button type="submit">Sign In</button>
+            <button type="submit" onClick={() => navigate('/clientverfication')}>Sign In</button>
           </div>
         </form>
       </div>
     </div>
   );
-};
+  };
+
 
 export default Clientlogin;

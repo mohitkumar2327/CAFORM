@@ -17,18 +17,17 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route path="/" element={<Clientlogin />} /> */}
-        {/* <Route path="/" element={<Clientverification />} /> */}
-        {/* <Route path="/" element={<Header />} /> */}
-        {/* <Route path="/" element={<Landingpg />} /> */}
-        {/* <Route path="/" element={<Queryresolver />} /> */}
-        {/* <Route path="/" element={<Documentreview />} /> */}
-        <Route path="/" element={<Headermain />} />
-        {/* <Route path="/" element={<Clientquestionnaire />} /> */}
-        {/* <Route path="/" element={<Clientqueries />} /> */}
-        {/* <Route path="/" element={<Headquerie />} /> */}
-        {/* <Route path="/" element={<Documentsign />} /> */}
-        {/* <Route path="/" element={<Headdocsign />} /> */}
+        <Route path="/" element={<Clientlogin />} />
+        <Route path="/clientverfication" element={<Clientverification />} />
+        <Route path="/landingpage" element={<Landingpg />} />
+        <Route path="/queryresolver" element={<Queryresolver />} />
+        <Route path="/documentreview" element={<Documentreview />} />
+        <Route path="/headermain" element={<Headermain />} />
+        <Route path="/clientquestionnaire" element={<Clientquestionnaire />} />
+        <Route path="/clientqueries" element={<Clientqueries />} />
+        <Route path="/headquerie" element={<Headquerie />} />
+        <Route path="/documentsign" element={<Documentsign />} />
+        <Route path="/headdocsign" element={<Headdocsign />} />
       </Routes>
     </Router>
   );

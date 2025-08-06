@@ -717,7 +717,6 @@
 // export default Headmain;
 
 
-
 import React, { useState, useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import userImage from '../assets/profile.jpg';

@@ -148,7 +148,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { startVerification, verificationSucceeded, verificationFailed } from '../redux/otpslice.js';
 import { login } from '../redux/usersclice.js';
 import '../css/otp.css';
-
+import { useNavigate } from 'react-router-dom';
 // This is the full component function
 
 const OTPVerification = () => {
@@ -158,7 +158,7 @@ const OTPVerification = () => {
     const inputRefs = useRef([]);
     const dispatch = useDispatch();
     const { isVerifying, error } = useSelector(state => state.otp);
-
+    const navigate = useNavigate();
     // This is the useEffect hook for the timer
     useEffect(() => {
         if (timer > 0) {
@@ -214,13 +214,13 @@ const OTPVerification = () => {
     const handleVerify = async () => {
         const otpValue = otp.join('');
         if (otpValue.length === 6) {
-            console.log('OTP:', otpValue);
             dispatch(startVerification());
             try {
                 const response = await verifyOtpWithApi(otpValue);
                 if (response.success) {
                     dispatch(verificationSucceeded());
                     dispatch(login({ email: response.user.email }));
+                    navigate('/landingpage');
                 } else {
                     dispatch(verificationFailed(response.error));
                 }

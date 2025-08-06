@@ -170,7 +170,8 @@
 }
 
 .response-textarea {
-  width: 633px;
+  width: 100%;
+  max-width: 633px;
   height: 70px;
   padding: 8px 12px;
   border: 1px solid #d1d5db;
