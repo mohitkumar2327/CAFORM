@@ -29,15 +29,15 @@ div, section, main, article {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: #ffffff;
     min-height: auto;
-    padding: 0 !important; /* Force remove all padding */
-    margin: 0 !important; /* Force remove all margin */
-    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important; 
+    width: 100% !important;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     position: relative; /* Add positioning context */
-    height: 100vh;
-    min-height: 100vh;
+    height: 100% !important;
+    
   overflow-y: auto;
 }
 
@@ -128,21 +128,21 @@ div, section, main, article {
 }
 
 .tab.active {
-    color: #1f2937; /* Darker color for active tab */
+    color: #000000 !important;
     border-bottom-color: #3b82f6;
-    background-color: #ffffff;
+    background-color: #ffffff !important;
 }
 
 /* Table Container */
 .table-container {
     background-color: #ffffff;
-    border-radius: 0; /* Remove border radius to match image */
+    border-radius: 0 !important;
     overflow: hidden;
-    box-shadow: none; /* Remove box shadow */
+    box-shadow: none;
     width: 100%;
     box-sizing: border-box;
-    border-top: 1px solid #e5e7eb; /* Add top border */
-    height: 100vh;
+    border-top: 1px solid #e5e7eb; 
+    height: 100% !important;
 }
 
 /* Table */

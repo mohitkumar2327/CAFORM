@@ -12,14 +12,15 @@ import Clientqueries from './screans/clientqueries.jsx'
 import Headquerie from './components/headerqueries.jsx'
 import Documentsign from './screans/clientdocumentsign.jsx'
 import Headdocsign from './components/headdocsign.jsx'
-
+import ClientNewUserLogin from './screans/clientNewUserLogin.jsx'
+import './css/screen1.css'
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Clientlogin />} />
         <Route path="/clientverfication" element={<Clientverification />} />
-        <Route path="/landingpage" element={<Landingpg />} />
+        <Route path="/landingpg" element={<Landingpg />} />
         <Route path="/queryresolver" element={<Queryresolver />} />
         <Route path="/documentreview" element={<Documentreview />} />
         <Route path="/headermain" element={<Headermain />} />
@@ -28,6 +29,7 @@ function App() {
         <Route path="/headquerie" element={<Headquerie />} />
         <Route path="/documentsign" element={<Documentsign />} />
         <Route path="/headdocsign" element={<Headdocsign />} />
+        <Route path="/clientNewUserLogin" element={<ClientNewUserLogin />} />
       </Routes>
     </Router>
   );

@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html, body, #root {
   height: 100%;
   width: 100%;
@@ -11,10 +12,9 @@ html, body, #root {
 
 .dashboard-container {
   max-height: 100vh;
-  background-color: #ffffff;
-  padding: 20px;
+  background-color: #f8fafc; /* Light gray background like in image */
+  padding: 10px 50px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-
 }
 
 .dashboard-wrapper {
@@ -24,82 +24,120 @@ html, body, #root {
 
 .header-section {
   margin-bottom: 32px;
+  padding: 0 50px;
 }
 
 .welcome-title {
   font-size: 30px;
   font-weight: 700;
-  color: #111827;
+  color: #08005CFF; /* Darker title color */
   margin-bottom: 8px;
 }
 
 .welcome-subtitle {
-  color: #6b7280;
+  color: #666666FF; /* Muted subtitle color */
   font-size: 16px;
   transition: color 0.3s ease, font-size 0.3s ease;
 }
 
-.dropdown-filters-container {
+/* Show and style the dropdown filters */
+/* Custom Dropdown Filters Styling */
+.custom-dropdown-container {
   display: flex;
   gap: 16px;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
   flex-wrap: nowrap;
   overflow-x: auto;
   padding-bottom: 8px;
-  margin-top: 18px;
+  margin-top: 24px;
+  padding: 10px 0;
 }
 
-.dropdown-wrapper {
+.custom-dropdown-wrapper {
   position: relative;
   flex-shrink: 0;
   min-width: 180px;
 }
 
-.dropdown-select {
+.custom-dropdown-select {
   appearance: none;
   background-color: white;
   border: 1px solid #d1d5db;
   border-radius: 8px;
-  padding: 8px 40px 8px 16px;
+  padding: 8px 32px 8px 12px;
   color: #374151;
   font-size: 14px;
+  font-weight: 400;
   outline: none;
   transition: all 0.2s ease;
   width: 100%;
   cursor: pointer;
+  height: 36px;
 }
 
-.dropdown-select:hover {
-  border-color: #A8ADB7;
+.custom-dropdown-select:hover {
+  border-color: #9ca3af;
 }
 
-.dropdown-select:focus {
+.custom-dropdown-select:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #3b82f6;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1);
 }
 
-.dropdown-arrow {
+.custom-dropdown-arrow {
   position: absolute;
   top: 0;
   right: 0;
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 0 8px;
+  padding: 0 10px;
   pointer-events: none;
 }
 
-.arrow-icon {
-  width: 16px;
-  height: 16px;
-  color: #9ca3af;
+.custom-arrow-icon {
+  width: 14px;
+  height: 14px;
+  color: #6b7280;
 }
 
+/* Mobile Responsive */
+@media (max-width: 767px) {
+  .custom-dropdown-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+  }
+
+  .custom-dropdown-wrapper {
+    min-width: 220px;
+    flex-shrink: 0;
+  }
+
+  .custom-dropdown-select {
+    font-size: 14px;
+    height: 48px;
+    padding: 12px 40px 12px 20px;
+  }
+
+  .custom-dropdown-arrow {
+    padding: 0 16px;
+  }
+
+  .custom-arrow-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+/* Card styling to match the clean look */
 .card-base {
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -112,6 +150,7 @@ html, body, #root {
   grid-template-columns: 1fr;
   gap: 24px;
   align-items: stretch;
+  padding: 0 50px;
 }
 
 @media (min-width: 768px) {
@@ -168,7 +207,7 @@ html, body, #root {
 .card-title {
   font-size: 18px;
   font-weight: 600;
-  color: #111827;
+  color: #1e293b; /* Dark title color for cards */
   margin: 0;
   line-height: 1.2;
 }
@@ -179,19 +218,14 @@ html, body, #root {
   font-size: 14px;
 }
 
-.status-not-started {
-  color: #000000;
-  font-weight: 400;
-  font-size: 18px;
-}
-
+.status-not-started, 
 .status-no-queries {
-  color: #000000;
+  color: #64748b; /* Muted status color */
   font-weight: 400;
   font-size: 18px;
 }
 
-/* Button Styles */
+/* Button Styles - Updated to match purple theme */
 .btn-primary, .btn-secondary {
   width: 236px;
   height: 52px;
@@ -205,31 +239,31 @@ html, body, #root {
 }
 
 .btn-primary {
-  background-color: rgb(107, 112, 254);
+  background-color: #6366f1; /* Purple primary button */
   color: white;
 }
 
 .btn-primary:not(.btn-disabled):hover {
-  background-color: rgb(81, 87, 255);
+  background-color: #4f46e5;
 }
 
 .btn-secondary {
-  background-color: #6064FFFF;
-  color: white;
+  background-color: #a5b4fc; /* Light purple for secondary buttons */
+  color: #4338ca; /* Darker text for better contrast */
 }
 
 .btn-secondary:not(.btn-disabled):hover {
-  background-color: #1d4ed8;
+  background-color: #93c5fd;
 }
 
 /* Disabled State */
 .btn-disabled {
-  opacity: 0.7;
-  background: #aeafff  !important;
-  color: #ffffff !important;
+  background-color: #d1d5db !important;
+  color: #9ca3af !important;
   cursor: not-allowed !important;
   pointer-events: none !important;
   border: 1px solid #d1d5db !important;
+  opacity: 1;
 }
 
 .due-date {
@@ -241,12 +275,12 @@ html, body, #root {
 .notifications-title {
   font-size: 20px;
   font-weight: 600;
-  color: #111827;
+  color: #1e293b; /* Updated color */
   margin-bottom: 16px;
 }
 
 .notifications-text {
-  color: #6b7280;
+  color: #64748b; /* Updated color */
   font-size: 14px;
   line-height: 1.5;
 }

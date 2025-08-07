@@ -46,10 +46,11 @@ const Header = () => {
   return (
     <div className='header'>
       <div className="header-top">
-        {/* Now the name is dynamic, coming from Redux state */}
-        <h3>User Name: {userName}</h3>
-        <div className="profile">
-          <img src={userImage} alt="profile" />
+        <div className="user-info">
+          <h3>User Name: {userName}</h3>
+          <div className="profile">
+            <img src={userImage} alt="profile" />
+          </div>
         </div>
       </div>
       <div className="header-bottom">
@@ -57,12 +58,11 @@ const Header = () => {
           <img src={homeIcon} alt="Home" className="home-icon" />
           <b><a href="/client-portal">Client Portal <b>&gt;</b> Dashboard</a></b>
         </div>
-        {/* The entity name is also dynamic */}
         <p>Master Entity name: {masterEntityName}</p>
       </div>
     </div>
   );
 };
 
-export default Header;
+export default Header; 
 

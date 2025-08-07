@@ -1,23 +1,28 @@
-/* QueryDashboard.css */
+/* QueryDashboard.css - Complete Refined Styling */
 
+/* Base Container */
 .dashboard-container {
   min-height: 100vh;
   background-color: #f9fafb;
-  padding: 0px;
+  padding: 0;
   width: 100%;
+  font-family: 'Inter', sans-serif;
 }
 
+/* Main Dashboard Area */
 .dashboard {
   margin: 0 auto;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   width: 100%;
+  overflow: hidden;
 }
 
+/* Header Section */
 .dashboard-header {
   border-bottom: 1px solid #e5e7eb;
-  padding: 10px;
+  padding: 14px 22px;
 }
 
 .header-content {
@@ -26,6 +31,7 @@
   align-items: center;
 }
 
+/* Search Input */
 .search-container {
   position: relative;
   flex: 1;
@@ -43,8 +49,8 @@
 }
 
 .search-input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #6064FF;
+  box-shadow: 0 0 0 3px rgba(96, 100, 255, 0.1);
 }
 
 .search-icon {
@@ -57,42 +63,48 @@
   height: 16px;
 }
 
-/* Updated Tab Styles */
+/* Tab Buttons - Pending/Resolved */
 .tab-container {
   display: flex;
   margin-left: 16px;
-  border: 1px solid #6064FFFF; /* Apply border to the container for the pill shape */
-  border-radius: 10px; /* Apply border-radius to the container */
-  overflow: hidden; /* Ensures inner elements don't break the container's radius */
+  border: 1px solid #6064FF;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 32px;
+  background: white;
 }
 
 .tab {
-  padding: 8px 16px;
+  padding: 4px 16px;
   font-weight: 500;
-  border: none; /* Remove individual borders */
+  border: none;
   cursor: pointer;
   transition: all 0.2s;
-  font-size: 14px;
-  /* Ensure no individual border-radius here */
+  font-size: 13px;
+  display: flex;
+  align-items: center;
 }
 
 .tab.active {
-  background-color: #6064FFFF; /* Use the purple from your image */
+  background-color: #6064FF;
   color: white;
 }
 
 .tab.inactive {
-  background-color: white; /* Make inactive background white as in the image */
-  color: #6064FFFF; /* Text color for inactive tab */
+  background-color: transparent;
+  color: #6064FF;
 }
 
 .tab.inactive:hover {
-  background-color: #e5e7eb; /* Keep a subtle hover for inactive */
+  background-color: #f5f5ff;
 }
 
-
+/* Table Styling */
 .table-container {
   overflow-x: auto;
+  padding: 0 16px;
+  height: 100%;
+  padding: 0;
 }
 
 .dashboard-table {
@@ -106,16 +118,20 @@
 }
 
 .table-header-cell {
-  padding: 16px 24px;
+  padding: 12px 16px;
   text-align: left;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   color: #6b7280;
-  letter-spacing: 0.5px;
 }
 
 .table-header-cell.number {
   width: 48px;
+}
+
+.table-header-cell.response {
+  text-align: right;
+  padding-right: 40px;
 }
 
 .table-body {
@@ -123,9 +139,8 @@
 }
 
 .table-row {
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 0.8px solid #e2e5e9;
   transition: background-color 0.2s;
-  cursor: pointer;
 }
 
 .table-row:hover {
@@ -133,7 +148,7 @@
 }
 
 .table-cell {
-  padding: 10px;
+  padding: 12px 16px;
   vertical-align: top;
 }
 
@@ -143,48 +158,47 @@
   color: #111827;
 }
 
-.table-cell.response {
-  text-align: right;
-  width: 300px;
-}
-
+/* Query Content */
 .query-description {
   font-size: 14px;
+  font-weight: 600;
   color: #111827;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   line-height: 1.5;
 }
 
 .query-dates {
   display: flex;
   gap: 24px;
-  font-size: 12px;
-  color: #6b7280;
+  font-size: 11px;
+  color: #8b92a0;
+  letter-spacing: 0.3px;
 }
 
+/* Response Area */
 .response-container {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-right: 119px;
+  justify-content: flex-end;
+  margin-right: 40px;
 }
 
 .response-textarea {
-  width: 100%;
-  max-width: 633px;
-  height: 70px;
+  width: 280px;
+  height: 64px;
   padding: 8px 12px;
   border: 1px solid #d1d5db;
+  border-radius: 6px;
   font-size: 14px;
-  font-family: inherit;
   resize: vertical;
   outline: none;
-  transition: border-color 0.2s;
+  transition: all 0.2s;
 }
 
 .response-textarea:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #6064FF;
+  box-shadow: 0 0 0 3px rgba(96, 100, 255, 0.1);
 }
 
 .attachment-icon {
@@ -193,31 +207,126 @@
   transition: color 0.2s;
   width: 20px;
   height: 20px;
+  margin-top: 6px;
+  margin-right: 4px;
 }
 
 .attachment-icon:hover {
-  color: #6b7280;
+  color: #6064FF;
 }
 
+/* Footer & Save Button */
 .dashboard-footer {
   border-top: 1px solid #e5e7eb;
-  padding: 24px;
+  padding: 16px 24px;
   display: flex;
   justify-content: flex-end;
 }
 
 .save-button {
-  background-color: #2563eb;
+  background-color: #6064FF;
   color: white;
-  padding: 8px 24px;
+  padding: 6px 20px;
   border-radius: 6px;
-  font-weight: 500;
+  font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
   font-size: 14px;
 }
 
 .save-button:hover {
-  background-color: #1d4ed8;
+  background-color: #4F54E6;
+  transform: translateY(-1px);
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .tab-container {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .response-container {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .response-textarea {
+    width: 100%;
+  }
+  
+  .attachment-icon {
+    align-self: flex-end;
+    margin-top: 4px;
+  }
+}
+/* QueryDashboard.css - Final Button Fixes */
+
+/* Base Purple Color */
+:root {
+  --primary-purple: #6064FF !important;
+  --primary-purple-hover: #4F54E6 !important;
+}
+
+/* Save Button - Force purple background */
+.save-button {
+  background-color: var(--primary-purple) !important;
+  color: white !important;
+  padding: 6px 20px !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+}
+
+.save-button:hover {
+  background-color: var(--primary-purple-hover) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Active Tab - Force purple */
+.tab.active {
+  background-color: var(--primary-purple) !important;
+  color: white !important;
+}
+
+/* Inactive Tab - Purple text */
+.tab.inactive {
+  color: var(--primary-purple) !important;
+  background-color: transparent !important;
+}
+
+/* Focus States - Purple outline */
+.search-input:focus,
+.response-textarea:focus {
+  border-color: var(--primary-purple) !important;
+  box-shadow: 0 0 0 3px rgba(96, 100, 255, 0.1) !important;
+}
+
+/* Hover States */
+.tab.inactive:hover {
+  background-color: #f5f5ff !important;
+}
+
+.attachment-icon:hover {
+  color: var(--primary-purple) !important;
+}
+
+/* Rest of your existing CSS remains unchanged */
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 0;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ... (all other existing rules remain the same) ... */

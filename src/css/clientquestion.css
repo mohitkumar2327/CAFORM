@@ -197,7 +197,7 @@ html, body, #root {
 }
 
 .question-container {
-  padding: 0 30px 20px 20px;
+  padding: 0 10px 20px 10px;
 }
 
 .question {
@@ -342,6 +342,23 @@ html, body, #root {
 
 .response-textarea {
   width: 100%;
+  /* max-width: 633px; */
+  min-height: 100px;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: white;
+  resize: vertical;
+  font-size: 14px;
+  
+  font-family: inherit;
+}
+.response-textarea {
+  /* This will ensure the textarea expands to the full width of its parent */
+  width: 100% !important; 
+  /* This removes the hard-coded maximum width */
+  max-width: none !important;
+  /* Other styles remain the same */
   min-height: 100px;
   border: 2px dashed #d1d5db;
   border-radius: 8px;
@@ -517,7 +534,7 @@ html, body, #root {
 
 .terms-section {
   background-color: rgb(255, 255, 255);
-  padding: 24px;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
@@ -550,6 +567,7 @@ html, body, #root {
 
 .checkbox-container {
   margin-bottom: 16px;
+  padding: 5px 0;
 }
 
 .checkbox-wrapper {
@@ -595,8 +613,8 @@ html, body, #root {
 }
 
 .form-label {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 700;
   color: #374151;
   margin-bottom: 8px;
 }
@@ -628,6 +646,7 @@ html, body, #root {
   display: flex;
   gap: 30px;
   margin-bottom: 16px;
+  padding: 20px 0 8px 0;
 }
 
 .signature-detail {
@@ -636,7 +655,7 @@ html, body, #root {
 }
 
 .security-text {
-  font-size: 12px;
+  font-size: 14px;
   color: #6b7280;
   line-height: 1.4;
   margin-bottom: 24px;

@@ -220,7 +220,7 @@ const OTPVerification = () => {
                 if (response.success) {
                     dispatch(verificationSucceeded());
                     dispatch(login({ email: response.user.email }));
-                    navigate('/landingpage');
+                    navigate('/landingpg');
                 } else {
                     dispatch(verificationFailed(response.error));
                 }

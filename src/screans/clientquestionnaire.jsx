@@ -2,6 +2,7 @@ import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
 import '../css/clientquestion.css';
 import React, { useState } from 'react';
 import Headmain from '../components/mainhead'
+import { useNavigate } from 'react-router-dom';
 const Clientquestionnaire = () => {
   const steps = [
     { id: 'all', number: '✓', label: 'All', status: 'completed' },
@@ -23,10 +24,9 @@ const Clientquestionnaire = () => {
   const [fullName, setFullName] = useState(''); // New state for Full Name input
   const [signature, setSignature] = useState(''); // New state for Signature input
   // --- End of new state declarations ---
-
+  const navigate = useNavigate();
   const handleSubmit = () => {
     if (termsChecked && confirmChecked) {
-      alert('Form submitted successfully!');
       // You'd typically send data to a server here, e.g., using fetch or axios
       console.log('Form data:', {
         tradingAnswer,
@@ -37,6 +37,7 @@ const Clientquestionnaire = () => {
         confirmChecked,
         // ... any other form data
       });
+      navigate('/queryresolver');
     } else {
       alert('Please check both checkboxes before submitting.');
     }
@@ -147,6 +148,9 @@ const Clientquestionnaire = () => {
               </div>
 
               <div className="response-section">
+                <div className="edit-link">
+                  <button>Edit</button>
+                </div>
                 <label className="response-label">Response:</label>
 
                 <div style={{ position: 'relative' }}>
@@ -307,6 +311,7 @@ const Clientquestionnaire = () => {
               </label>
             </div>
           </div>
+          <hr />
 
           <div className="form-section">
             <div className="form-row">

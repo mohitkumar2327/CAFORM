@@ -797,39 +797,6 @@ const Documentsign = () => {
     document.body.removeChild(link);
   };
 
-  // COMMENTED OUT - Handle file upload functionality
-  /*
-  const handleFileUpload = (event) => {
-    const file = event.target.files[0];
-    if (file && file.type === 'application/pdf') {
-      // Create object URL for the uploaded file
-      const fileUrl = URL.createObjectURL(file);
-      
-      // Create new document object
-      const newDocument = {
-        id: Date.now(), // Simple ID generation
-        name: file.name,
-        type: 'Uploaded Document', // You can make this configurable
-        fy: new Date().getFullYear().toString(),
-        signedBy: '-',
-        signedOn: '-',
-        status: activeTab, // Add to current active tab
-        url: fileUrl
-      };
-
-      // Add to documents array
-      setDocuments(prev => [...prev, newDocument]);
-      setShowUploadModal(false);
-      
-      // Clear the input
-      event.target.value = '';
-    } else {
-      alert('Please select a PDF file');
-    }
-  };
-  */
-
-  // Handle PDF loading errors
   const handlePdfError = () => {
     setPdfError(true);
   };
@@ -856,17 +823,6 @@ const Documentsign = () => {
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          {/* COMMENTED OUT - Upload Button
-          {!viewingPdf && (
-            <button 
-              className="upload-button"
-              onClick={() => setShowUploadModal(true)}
-            >
-              <Plus size={16} />
-              Add Document
-            </button>
-          )}
-          */}
         </div>
 
         {/* Conditional Rendering: Show Tabs + Table (PDF now opens in drawer) */}

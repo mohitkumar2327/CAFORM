@@ -4,14 +4,16 @@ import Header from '../components/header';
 import docRevu from '../assets/docrevu.png';
 import edit from '../assets/edit.png';
 import reload from '../assets/reload.png';
-
+import { FiChevronDown } from 'react-icons/fi'; // Import the icon
+import { useNavigate } from 'react-router-dom';
 const Landingpg = () => {
   const [welcomeSubtitle, setWelcomeSubtitle] = useState("You have 3 tasks pending across 2 entities. Let's get started.");
   const [activeActionButton, setActiveActionButton] = useState('getStarted');
-
+  const navigate = useNavigate();
   const handleGetStartedClick = () => {
     setWelcomeSubtitle("You have 3 tasks pending across 2 entities. Let's get started.");
     setActiveActionButton('getStarted');
+    navigate('/clientquestionnaire');
   };
 
   const handleViewRespondClick = () => {
@@ -27,13 +29,38 @@ const Landingpg = () => {
   return (
     <>
       <Header />
-
       <div className="dashboard-container">
         <div className="dashboard-wrapper">
           <div className="header-section">
             <h1 className="welcome-title">Welcome, John.</h1>
             <p className="welcome-subtitle">{welcomeSubtitle}</p>
+            
+            {/* Dropdown filters moved here - below welcome subtitle */}
+            <div className="custom-dropdown-container">
+              <div className="custom-dropdown-wrapper">
+                <select className="custom-dropdown-select">
+                  <option>Sample Company Ltd</option>
+                  <option>Another Company Inc</option>
+                  <option>Test Corporation</option>
+                </select>
+                <div className="custom-dropdown-arrow">
+                  <FiChevronDown className="custom-arrow-icon" />
+                </div>
+              </div>
+
+              <div className="custom-dropdown-wrapper">
+                <select className="custom-dropdown-select">
+                  <option>FY 2025</option>
+                  <option>FY 2024</option>
+                  <option>FY 2023</option>
+                </select>
+                <div className="custom-dropdown-arrow">
+                  <FiChevronDown className="custom-arrow-icon" />
+                </div>
+              </div>
+            </div>
           </div>
+
           <div className="main-content-grid">
             {/* General Questionnaire Card */}
             <div className="task-card card-base">

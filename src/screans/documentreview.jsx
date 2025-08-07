@@ -4,6 +4,8 @@ import Header from '../components/header';
 import docRevu from '../assets/docrevu.png';
 import edit from '../assets/edit.png';
 import reload from '../assets/reload.png';
+import { FiChevronDown } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
 const Documentreview = () => {
   const [welcomeSubtitle, setWelcomeSubtitle] = useState("You have 3 tasks pending across 1 entities. Let's get started.");
@@ -18,10 +20,12 @@ const Documentreview = () => {
     setWelcomeSubtitle("You have 3 tasks pending in 1 entity: Let's get started.");
     setActiveActionButton('viewRespond');
   };
-
+    const navigate = useNavigate();
+  
   const handleViewSignClick = () => {
     setWelcomeSubtitle("You have 2 tasks pending across 2 entities: Let's get started.");
     setActiveActionButton('viewSign');
+    navigate('/documentsign');
   };
 
   return (
@@ -31,32 +35,34 @@ const Documentreview = () => {
       <div className="dashboard-container">
         <div className="dashboard-wrapper">
           <div className="header-section">
-            <h1 className="welcome-title">Welcome, John.</h1>
-            <p className="welcome-subtitle">{welcomeSubtitle}</p>
-          </div>
-
-          <div className="dropdown-filters-container">
-            <div className="dropdown-wrapper">
-              <select className="dropdown-select">
-                <option>Sample Company Ltd</option>
-              </select>
-              <div className="dropdown-arrow">
-                <svg className="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
-            </div>
-            <div className="dropdown-wrapper">
-              <select className="dropdown-select">
-                <option>FY 2025</option>
-              </select>
-              <div className="dropdown-arrow">
-                <svg className="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
-            </div>
-          </div>
+                      <h1 className="welcome-title">Welcome, John.</h1>
+                      <p className="welcome-subtitle">{welcomeSubtitle}</p>
+                      
+                      {/* Dropdown filters moved here - below welcome subtitle */}
+                      <div className="custom-dropdown-container">
+                        <div className="custom-dropdown-wrapper">
+                          <select className="custom-dropdown-select">
+                            <option>Sample Company Ltd</option>
+                            <option>Another Company Inc</option>
+                            <option>Test Corporation</option>
+                          </select>
+                          <div className="custom-dropdown-arrow">
+                            <FiChevronDown className="custom-arrow-icon" />
+                          </div>
+                        </div>
+          
+                        <div className="custom-dropdown-wrapper">
+                          <select className="custom-dropdown-select">
+                            <option>FY 2025</option>
+                            <option>FY 2024</option>
+                            <option>FY 2023</option>
+                          </select>
+                          <div className="custom-dropdown-arrow">
+                            <FiChevronDown className="custom-arrow-icon" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
           <div className="main-content-grid">
             {/* General Questionnaire Card */}
@@ -114,8 +120,10 @@ const Documentreview = () => {
                 </div>
                 <p className="card-status status-no-queries">2 Documents</p>
                 <button
-                  disabled={activeActionButton !== 'viewSign'}
-                  className={`btn-primary ${activeActionButton !== 'getStarted' ? 'btn-disabled' : ''}`}
+                  // FIX: Change 'disabled' logic to make the button clickable
+                  // You can remove the 'disabled' prop entirely, or update the state.
+                  // For this example, let's assume it should be clickable.
+                  className="btn-primary" // Use the default enabled class
                   onClick={handleViewSignClick}
                 >
                   View & Sign
