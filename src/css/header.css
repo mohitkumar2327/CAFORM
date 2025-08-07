@@ -1,11 +1,14 @@
-/* .header {
+.header {
   width: 100%;
   background-color: #ffffff;
   box-sizing: border-box;
   font-family: 'Open Sans', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 .header-top {
+  width: 100%;;
   display: flex;
   justify-content: flex-end;
   padding: 12px 24px;
@@ -35,6 +38,7 @@
 }
 
 .header-bottom {
+  width: 100%;;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,10 +74,10 @@
   font-size: 14px;
   color: #666666;
   font-weight: 400;
-} */
+}
 
 
-/* header.css */
+/* 
 body {
   font-family: 'Open Sans', Arial, sans-serif;
 }
@@ -166,4 +170,4 @@ body {
   color: #666666;
   margin: 0;
   font-weight: 400;
-}
+} */
