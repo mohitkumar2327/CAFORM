@@ -33,7 +33,7 @@ This is a single-page application built with React and Redux Toolkit for state m
 # This project uses the following key technologies and Install the dependencies:
 
 
-# 1. mpm i react: A JavaScript library for building user interfaces.
+# 1. npm i react: A JavaScript library for building user interfaces.
 
 # 2. npm i redux-toolkit: An official opinionated toolset for efficient Redux development.
 
