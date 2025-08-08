@@ -64,6 +64,7 @@
   border: 1px solid #6064FFFF; /* Apply border to the container for the pill shape */
   border-radius: 10px; /* Apply border-radius to the container */
   overflow: hidden; /* Ensures inner elements don't break the container's radius */
+  color: #6064FFFF;
 }
 
 .tab {
@@ -79,6 +80,7 @@
 .tab.active {
   background-color: #6064FFFF !important;/* Use the purple from your image */
   color: white;
+  background: #6064FFFF;
 }
 
 .tab.inactive {
@@ -194,7 +196,10 @@
   width: 20px;
   height: 20px;
 }
-
+.attachment-button{
+  background-color: white;
+  border: none;
+}
 .attachment-icon:hover {
   color: #6b7280;
 }

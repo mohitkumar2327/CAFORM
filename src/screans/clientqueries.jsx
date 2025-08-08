@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../css/clientqueries.css';
 import Headquerie from '../components/headerqueries';
-
+import { useNavigate } from 'react-router-dom';
 const Clientqueries = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState('Pending');
@@ -62,7 +62,9 @@ const Clientqueries = () => {
     query.status === activeTab &&
     query.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  const navigate = useNavigate();
 
+  
   return (
     <>
       <Headquerie />
@@ -161,7 +163,7 @@ const Clientqueries = () => {
           </div>
 
           <div className="dashboard-footer">
-            <button className="save-button">Save</button>
+            <button className="save-button" onClick={() => navigate('/documentreview')}>Save</button>
           </div>
         </div>
       </div>

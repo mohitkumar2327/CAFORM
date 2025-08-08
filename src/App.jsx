@@ -14,13 +14,11 @@ import Documentsign from './screans/clientdocumentsign.jsx'
 import Headdocsign from './components/headdocsign.jsx'
 import ClientNewUserLogin from './screans/clientNewUserLogin.jsx'
 import './css/screen1.css'
-// import Clientquestionnaire2 from "./screans/clientquestionnaire2.jsx";
-// import Clientquestionnaire3 from "./screans/clientquestionnaire3.jsx";
+
 function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route path="/" element={<Clientquestionnaire3 />} /> */}
         <Route path="/" element={<Clientlogin />} />
         <Route path="/clientverfication" element={<Clientverification />} />
         <Route path="/landingpg" element={<Landingpg />} />
