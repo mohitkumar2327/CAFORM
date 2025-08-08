@@ -1,6 +1,6 @@
 import React from "react";
 import Clientlogin from './screans/clientlogin.jsx';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Clientverification from './screans/clientverification.jsx';
 import Header from "./components/header.jsx";
 import Landingpg from './screans/clientlandingpage.jsx';
@@ -19,7 +19,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Clientlogin />} />
+        <Route path="/clientlogin" element={<Clientlogin />} />
         <Route path="/clientverfication" element={<Clientverification />} />
         <Route path="/landingpg" element={<Landingpg />} />
         <Route path="/queryresolver" element={<Queryresolver />} />
@@ -31,6 +31,7 @@ function App() {
         <Route path="/documentsign" element={<Documentsign />} />
         <Route path="/headdocsign" element={<Headdocsign />} />
         <Route path="/clientNewUserLogin" element={<ClientNewUserLogin />} />
+        <Route path="/" element={<Navigate to="/clientlogin" replace />} />
       </Routes>
     </Router>
   );

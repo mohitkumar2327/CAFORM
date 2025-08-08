@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import userImage from '../assets/profile.jpg';
@@ -5,6 +6,7 @@ import '../css/headermain.css';
 import homeIcon from '../assets/home.png';
 import AddImageModal from './addimagemodel.jsx';
 import { useNavigate } from 'react-router-dom';
+
 // Change Password Modal Component
 const ChangePasswordModal = ({ onClose }) => {
     const [formData, setFormData] = useState({
@@ -336,7 +338,7 @@ const ChangePasswordModal = ({ onClose }) => {
     );
 };
 
-// Main Headmain Component
+// Main Headdocsign Component
 const Headdocsign = () => {
     const userName = useSelector((state) => state.user.name);
     const masterEntityName = useSelector((state) => state.user.masterEntityName);
@@ -344,6 +346,7 @@ const Headdocsign = () => {
     const [showAddImageModal, setShowAddImageModal] = useState(false);
     const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
     const dropdownRef = useRef(null);
+    const navigate = useNavigate();
 
     // Close dropdown when clicking outside
     useEffect(() => {
@@ -381,7 +384,18 @@ const Headdocsign = () => {
     const handleCloseChangePasswordModal = () => {
         setShowChangePasswordModal(false); // Close the change password modal
     };
-    const navigate = useNavigate();
+
+    const handleSignOut = () => {
+        setIsDropdownOpen(false); // Close the profile dropdown
+        // You can add any sign out logic here (like clearing localStorage, Redux state, etc.)
+        // For example:
+        // localStorage.removeItem('authToken');
+        // dispatch(clearUserData());
+        localStorage.removeItem('authToken');
+        localStorage.removeItem('userData');
+        // Navigate to client login page (root path)
+        navigate('/', { replace: true });
+    };
 
     return (
         <div className='header'>
@@ -422,7 +436,7 @@ const Headdocsign = () => {
                                     </button>
                                 </li>
                                 <li>
-                                    <button onClick={() => navigate('/clientNewUserLogin')}className="dropdown-item">
+                                    <button className="dropdown-item">
                                         <span>Add New User</span>
                                     </button>
                                 </li>
@@ -432,7 +446,7 @@ const Headdocsign = () => {
                                     </button>
                                 </li>
                                 <li>
-                                    <button className="dropdown-item">
+                                    <button className="dropdown-item" onClick={handleSignOut}>
                                         <span>Sign out</span>
                                     </button>
                                 </li>
@@ -444,7 +458,7 @@ const Headdocsign = () => {
             <div className="header-bottom">
                 <div className="breadcrumb">
                     <img src={homeIcon} alt="Home" className="home-icon" />
-                    <b><a href="/client-portal">Client Portal <b>&gt;</b> Document Signing</a></b>
+                    <b><a href="/client-portal">Client Portal <b>&gt;</b> General Questionnaire</a></b>
                 </div>
                 <p>Master Entity name: {masterEntityName}</p>
             </div>
@@ -463,3 +477,6 @@ const Headdocsign = () => {
 };
 
 export default Headdocsign;
+
+
+//Headdocsign
