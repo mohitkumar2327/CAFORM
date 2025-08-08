@@ -60,8 +60,8 @@ npm
 Installation
 Clone the repository:
 
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone (https://github.com/mohitkumar2327/CAFORM.git)
+cd your-repo-name or your saved name
 
 # Install the dependencies:
 
