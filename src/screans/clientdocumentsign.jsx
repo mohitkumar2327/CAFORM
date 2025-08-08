@@ -665,7 +665,7 @@ const INITIAL_DOCUMENTS = [
     signedOn: '-',
     status: 'drafts',
     // Using another sample PDF URL
-    url: 'https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf'
+    url: 'https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf'
   },
   {
     id: 3,

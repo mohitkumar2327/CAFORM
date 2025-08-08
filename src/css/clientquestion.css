@@ -1587,14 +1587,18 @@ hr {
 
 .floating-prev-btn {
     left: 20px;
-    background-color: rgba(55, 65, 81, 0.9);
-    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #6d28d9;
+    color: rgb(255, 255, 255);
 }
 
 .floating-next-btn {
     right: 20px;
-    background-color: rgba(59, 130, 246, 0.9);
-    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #6d28d9;
+    color: rgb(255, 255, 255);
 }
 
 .floating-nav-btn:hover:not(:disabled) {
@@ -1603,11 +1607,13 @@ hr {
 }
 
 .floating-prev-btn:hover:not(:disabled) {
-    background-color: rgba(55, 65, 81, 1);
+   background-color: #6d28d9;
+    color: rgb(255, 255, 255);
 }
 
 .floating-next-btn:hover:not(:disabled) {
-    background-color: rgba(59, 130, 246, 1);
+    background-color: #6d28d9;
+    color: rgb(255, 255, 255);
 }
 
 .floating-nav-btn:disabled {
